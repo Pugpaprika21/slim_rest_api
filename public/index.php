@@ -32,6 +32,9 @@ $app->get('/show_user/{id}', function (Request $request, Response $response, arr
     $stmt = $db->prepare("SELECT * FROM user_tb WHERE id = ?");
     $stmt->execute([$user_id]);
     $user  = $stmt->fetch();
+
+    $payload = json_encode($user);
+    $response->getBody()->write($payload);
     return $response
         ->withHeader('Content-Type', 'application/json')
         ->withStatus(201);
