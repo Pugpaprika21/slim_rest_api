@@ -1,0 +1,8 @@
+php -S localhost:8080 -t public public/index.php
+
+db - 
+composer require illuminate/database "~5.1"
+
+composer dumpautoload -o
+
+composer.phar require slim/php-view
