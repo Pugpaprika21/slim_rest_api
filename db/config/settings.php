@@ -1,5 +1,7 @@
 <?php
 
+define('DB_ROOT', __DIR__);
+
 return [
     'db' => [
         'servername' => 'localhost',
