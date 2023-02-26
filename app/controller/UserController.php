@@ -8,9 +8,9 @@ use Includer\Vars;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class UsersController
+class UserController
 {
-    private $db = null;
+    private ?PDO $db = null;
 
     public function __construct()
     {
@@ -31,6 +31,7 @@ class UsersController
     {
         $user_id = $args['id'];
         $stmt = $this->db->prepare("SELECT * FROM user_tb WHERE usr_id = ?");
+
         $stmt->execute([$user_id]);
         $user = $stmt->fetch(PDO::FETCH_OBJ);
 

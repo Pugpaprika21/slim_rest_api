@@ -3,6 +3,9 @@
         "psr-4": {
             "App\\": "app/",
             "App\\Controller\\": "app/controller/",
+            "App\\Models\\": "app/models/",
+            "App\\Factory\\": "app/factory/",
+            "App\\Factory\\Database\\": "app/factory/database/",
             "Database\\": "db/",
             "Database\\Config\\": "db/config/",
             "Includer\\": "src/"

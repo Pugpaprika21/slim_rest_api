@@ -54,6 +54,9 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
         ),
         'A' => 
         array (
+            'App\\Models\\' => 11,
+            'App\\Factory\\Database\\' => 21,
+            'App\\Factory\\' => 12,
             'App\\Controller\\' => 15,
             'App\\' => 4,
         ),
@@ -146,6 +149,18 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
         array (
             0 => __DIR__ . '/../..' . '/db',
         ),
+        'App\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models',
+        ),
+        'App\\Factory\\Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/factory/database',
+        ),
+        'App\\Factory\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/factory',
+        ),
         'App\\Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controller',
@@ -171,6 +186,7 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
     );
 
     public static $classMap = array (
+        'App\\Controller\\UserController' => __DIR__ . '/../..' . '/app/controller/UserController.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
