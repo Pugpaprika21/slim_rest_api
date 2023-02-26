@@ -11,7 +11,7 @@ class SlimDB
     /**
      * #SlimDB::getConfig('../db/config/settings.php');
      *
-     * @param string $dir_settings '../db/config/settings.php'
+     * @param string
      * @return self
      */
     public static function getConfig(string $dir_settings): self
