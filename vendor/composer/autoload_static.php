@@ -52,6 +52,11 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
             'Database\\Config\\' => 16,
             'Database\\' => 9,
         ),
+        'A' => 
+        array (
+            'App\\Controller\\' => 15,
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -140,6 +145,14 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
         'Database\\' => 
         array (
             0 => __DIR__ . '/../..' . '/db',
+        ),
+        'App\\Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controller',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

@@ -26,6 +26,9 @@ class SlimDB
         }
     }
 
+    /**
+     * @return PDO|void
+     */
     public static function connection(): PDO
     {
         if (is_array(self::$dir)) {
@@ -39,6 +42,7 @@ class SlimDB
                 PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_PERSISTENT => true
             ]);
+            
         } else {
             Vars::dump(self::$dir, true);
         }

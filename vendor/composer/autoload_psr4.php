@@ -27,5 +27,7 @@ return array(
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'Database\\Config\\' => array($baseDir . '/db/config'),
     'Database\\' => array($baseDir . '/db'),
+    'App\\Controller\\' => array($baseDir . '/app/controller'),
+    'App\\' => array($baseDir . '/app'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );
