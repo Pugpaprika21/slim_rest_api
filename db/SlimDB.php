@@ -16,14 +16,14 @@ class SlimDB
      * @param string
      * @return self
      */
-    public static function getConfig(string $dir_settings): self
+    public static function getConfig(string $file_settings): self
     {
-        $real = self::$path . $dir_settings;
+        $real = self::$path . $file_settings;
         if (file_exists($real)) {
             self::$dir = require_once($real);
             return new self;
         } else {
-            $fake = self::$path . $dir_settings;
+            $fake = self::$path . $file_settings;
             Vars::dump("file not found!! " . $fake, true);
         }
     }
