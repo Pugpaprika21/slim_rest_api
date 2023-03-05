@@ -7,15 +7,18 @@ use Database\SlimDB;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class UserController extends SlimController
+final class UserController extends SlimController
 {
     private ?PDO $db = null;
 
-    public readonly string $htt;
+    public readonly string $statusText;
 
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(function (): void {
+            $app = require(__DIR__ . 'drivers.php');
+        });
+
         $this->db = SlimDB::getConfig('settings.php')->connection();
     }
 
