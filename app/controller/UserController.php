@@ -7,26 +7,12 @@ use Database\SlimDB;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class UserController extends SlimController
+class UserController 
 {
     private ?PDO $db = null;
 
-    public readonly string $statusText;
-
     public function __construct()
     {
-        parent::__construct(function (): void 
-        {
-            $app = require(__DIR__ . 'drivers.php');
-            if (!$app) return;
-
-            foreach ($app as $k => $v) {
-                if (array_key_exists($k, $app[$v])) {
-                    $this->raw($app[$v]);
-                }
-            }
-        });
-
         $this->db = SlimDB::getConfig('settings.php')->connection();
     }
 
@@ -58,9 +44,5 @@ class UserController extends SlimController
         $resp->getBody()->write($payload);
 
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
-    }
-
-    private function raw(array $app)
-    {
     }
 }
