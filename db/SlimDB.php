@@ -16,7 +16,7 @@ class SlimDB
      * @param string
      * @return self|void
      */
-    public static function getConfig(string $file_settings): self
+    public static function getConfig(string $file_settings): ?self
     {
         $real = self::$path . $file_settings;
         if (file_exists($real)) {
@@ -31,7 +31,7 @@ class SlimDB
     /**
      * @return PDO|void
      */
-    public static function connection(): PDO
+    public static function connection(): ?PDO
     {
         if (is_array(self::$dir)) {
 
