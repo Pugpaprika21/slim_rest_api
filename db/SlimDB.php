@@ -8,6 +8,8 @@ use PDO;
 class SlimDB
 {
     private static array $dir = [];
+    private static string $path = "/config/";
+
     /**
      * #SlimDB::getConfig('../db/config/settings.php');
      *
@@ -16,12 +18,12 @@ class SlimDB
      */
     public static function getConfig(string $dir_settings): self
     {
-        $real = __DIR__ . "/config/" . $dir_settings;
+        $real = __DIR__ . self::$path . $dir_settings;
         if (file_exists($real)) {
             self::$dir = require_once($real);
             return new self;
         } else {
-            $fake = __DIR__ . "/config/" . $dir_settings;
+            $fake = __DIR__ . self::$path . $dir_settings;
             Vars::dump("file not found!! " . $fake, true);
         }
     }
