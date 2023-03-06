@@ -57,5 +57,6 @@ trait BTrait01
     {
 
         $callback(new self());
+        return [];
     }
 }

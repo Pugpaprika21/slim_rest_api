@@ -17,13 +17,14 @@ class UserController extends SlimController
             ->orderBy('usr_id', 'DESC')
             ->get();
 
-        $resp->getBody()->write(json_decode((string)$files) ?? '');
+        $resp->getBody()->write(json_encode($files));
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
+
     public function showUsers(Request $req, Response $resp, array $args): Response
     {
         $users = SlimORM::table('users')->get();
-        $resp->getBody()->write(json_encode($users) ?? '');
+        $resp->getBody()->write(json_encode($users));
 
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
