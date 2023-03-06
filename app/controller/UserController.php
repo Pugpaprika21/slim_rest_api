@@ -22,13 +22,6 @@ class UserController extends SlimController
         $resp->getBody()->write($payload);
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
-
-    public function index(Request $req, Response $resp, array $args): Response
-    {
-        $resp->getBody()->write('index');
-        return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
-    }
-
     public function showUsers(Request $req, Response $resp, array $args): Response
     {
         $users = $this->db->query("SELECT * FROM user_tb")->fetchAll(PDO::FETCH_OBJ);
@@ -50,6 +43,12 @@ class UserController extends SlimController
         $payload = json_encode($user);
         $resp->getBody()->write($payload);
 
+        return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
+    }
+
+    public function index(Request $req, Response $resp, array $args): Response
+    {
+        $resp->getBody()->write('index');
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
 
