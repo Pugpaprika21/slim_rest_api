@@ -17,17 +17,13 @@ class UserController extends SlimController
             ->orderBy('usr_id', 'DESC')
             ->get();
 
-        $payload = json_decode((string)$files) ?? '';
-
-        $resp->getBody()->write($payload);
+        $resp->getBody()->write(json_decode((string)$files) ?? '');
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
     public function showUsers(Request $req, Response $resp, array $args): Response
     {
-        $users = $this->db->query("SELECT * FROM user_tb")->fetchAll(PDO::FETCH_OBJ);
-
-        $payload = json_encode($users);
-        $resp->getBody()->write($payload);
+        $users = SlimORM::table('users')->get();
+        $resp->getBody()->write(json_encode($users) ?? '');
 
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
@@ -59,3 +55,5 @@ class UserController extends SlimController
         $this->db = SlimDB::getConfig('settings.php')->connection();
     }
 }
+
+// $users = $this->db->query("SELECT * FROM user_tb")->fetchAll(PDO::FETCH_OBJ);
