@@ -12,10 +12,7 @@ class UserController extends SlimController
 {
     public function getFormFile(Request $req, Response $resp, array $args): Response
     {
-        $files = SlimORM::table('file')
-            ->where('id', '=', $args['id'])
-            ->orderBy('usr_id', 'DESC')
-            ->get();
+        $files = SlimORM::table('file')->where('id', '=', $args['id'])->orderBy('usr_id', 'DESC')->get();
 
         $resp->getBody()->write(json_encode($files));
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
