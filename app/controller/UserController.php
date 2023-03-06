@@ -29,6 +29,10 @@ class UserController extends SlimController
     public function showUser(Request $req, Response $resp, array $args): Response
     {
         $user_id = $args['id'];
+        $user = SlimORM::table('user')->where('id', '=', $args['id'])->get();
+
+
+
         $stmt = $this->db->prepare("SELECT * FROM user_tb WHERE usr_id = ?");
 
         $stmt->execute([$user_id]);
