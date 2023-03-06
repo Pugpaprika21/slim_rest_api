@@ -27,6 +27,8 @@ return array(
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'Database\\Config\\' => array($baseDir . '/db/config'),
     'Database\\' => array($baseDir . '/db'),
+    'App\\SlimQuery\\Factory\\' => array($baseDir . '/app/query/factory'),
+    'App\\SlimQuery\\' => array($baseDir . '/app/query'),
     'App\\Models\\' => array($baseDir . '/app/models'),
     'App\\Factory\\Database\\' => array($baseDir . '/app/factory/database'),
     'App\\Factory\\' => array($baseDir . '/app/factory'),

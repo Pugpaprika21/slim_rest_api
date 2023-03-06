@@ -6,6 +6,8 @@
             "App\\Models\\": "app/models/",
             "App\\Factory\\": "app/factory/",
             "App\\Factory\\Database\\": "app/factory/database/",
+            "App\\SlimQuery\\": "app/query/",
+            "App\\SlimQuery\\Factory\\": "app/query/factory/",
             "Database\\": "db/",
             "Database\\Config\\": "db/config/",
             "Includer\\": "src/"

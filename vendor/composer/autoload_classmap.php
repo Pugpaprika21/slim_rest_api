@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controller\\UserController' => $baseDir . '/app/controller/UserController.php',
+    'App\\Factory\\Database\\DatabaseManagerFactory' => $baseDir . '/app/factory/database/DatabaseManagerFactory.php',
+    'App\\Models\\UserModal' => $baseDir . '/app/models/UserModal.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',

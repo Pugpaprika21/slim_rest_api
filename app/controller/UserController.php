@@ -46,3 +46,4 @@ class UserController
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
 }
+
