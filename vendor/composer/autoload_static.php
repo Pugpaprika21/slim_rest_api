@@ -55,6 +55,7 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
         'A' => 
         array (
             'App\\SlimQuery\\Factory\\' => 22,
+            'App\\SlimQuery\\Bulid\\' => 20,
             'App\\SlimQuery\\' => 14,
             'App\\Models\\' => 11,
             'App\\Factory\\Database\\' => 21,
@@ -155,6 +156,10 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
         array (
             0 => __DIR__ . '/../..' . '/app/query/factory',
         ),
+        'App\\SlimQuery\\Bulid\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/query/bulid',
+        ),
         'App\\SlimQuery\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/query',
@@ -199,6 +204,8 @@ class ComposerStaticInitbdad848c95978363a5a9fffeb5f55aeb
         'App\\Controller\\UserController' => __DIR__ . '/../..' . '/app/controller/UserController.php',
         'App\\Factory\\Database\\DatabaseManagerFactory' => __DIR__ . '/../..' . '/app/factory/database/DatabaseManagerFactory.php',
         'App\\Models\\UserModal' => __DIR__ . '/../..' . '/app/models/UserModal.php',
+        'App\\SlimQuery\\Factory\\SlimBuilderFactory' => __DIR__ . '/../..' . '/app/query/factory/SlimBuilderFactory.php',
+        'App\\SlimQuery\\SlimBuilder' => __DIR__ . '/../..' . '/app/query/SlimBuilder.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',

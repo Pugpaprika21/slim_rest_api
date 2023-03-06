@@ -28,6 +28,7 @@ return array(
     'Database\\Config\\' => array($baseDir . '/db/config'),
     'Database\\' => array($baseDir . '/db'),
     'App\\SlimQuery\\Factory\\' => array($baseDir . '/app/query/factory'),
+    'App\\SlimQuery\\Bulid\\' => array($baseDir . '/app/query/bulid'),
     'App\\SlimQuery\\' => array($baseDir . '/app/query'),
     'App\\Models\\' => array($baseDir . '/app/models'),
     'App\\Factory\\Database\\' => array($baseDir . '/app/factory/database'),

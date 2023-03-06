@@ -2,18 +2,25 @@
 
 namespace App\Controller;
 
+use App\SlimQuery\SlimBuilder as SlimORM;
 use PDO;
 use Database\SlimDB;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class UserController 
+class UserController extends SlimController
 {
-    private ?PDO $db = null;
-
-    public function __construct()
+    public function getFormFile(Request $req, Response $resp, array $args): Response
     {
-        $this->db = SlimDB::getConfig('settings.php')->connection();
+        $files = SlimORM::table('file')
+            ->where('id', '=', $args['id'])
+            ->orderBy('usr_id', 'DESC')
+            ->get();
+
+        $payload = json_decode((string)$files) ?? '';
+
+        $resp->getBody()->write($payload);
+        return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
 
     public function index(Request $req, Response $resp, array $args): Response
@@ -45,5 +52,11 @@ class UserController
 
         return $resp->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
-}
 
+    private ?PDO $db = null;
+
+    public function __construct()
+    {
+        $this->db = SlimDB::getConfig('settings.php')->connection();
+    }
+}

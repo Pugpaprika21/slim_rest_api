@@ -8,6 +8,7 @@
             "App\\Factory\\Database\\": "app/factory/database/",
             "App\\SlimQuery\\": "app/query/",
             "App\\SlimQuery\\Factory\\": "app/query/factory/",
+            "App\\SlimQuery\\Bulid\\": "app/query/bulid/",
             "Database\\": "db/",
             "Database\\Config\\": "db/config/",
             "Includer\\": "src/"
