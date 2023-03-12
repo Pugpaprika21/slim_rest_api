@@ -19,6 +19,7 @@ class UserController extends SlimController
             ->join('file', 'file_user.id', '=', 'file.id')
             ->join('file', 'file_user.prof_id', '=', 'file.prof_id')
             ->where('file.usr_id', $file['id'])
+            ->orderBy('file.usr_id', 'DESC')
             ->get();
 
         $fileResp = array_merge(['single_file' => $file, 'all_file' => $files]);
